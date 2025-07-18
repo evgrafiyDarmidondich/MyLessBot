@@ -1,7 +1,9 @@
 import asyncio
+from os.path import defpath
+
 from aiogram import Router, F
 from aiogram.filters import Command, CommandStart
-from aiogram.types import Message
+from aiogram.types import Message, CallbackQuery
 from aiogram.enums import ChatAction
 
 import app.keybords as kb
@@ -14,7 +16,7 @@ router = Router()
 async def cmd_start(message: Message):
     await message.bot.send_chat_action(chat_id=message.from_user.id, action=ChatAction.TYPING)
     await asyncio.sleep(1)
-    await message.answer('Привет', reply_markup=kb.main)
+    await message.answer('Привет', reply_markup=kb.inline_main)
 
 @router.message(Command('help'))
 async def cmd_help(message: Message):
@@ -60,3 +62,29 @@ async def admin_list(message: Message):
     for u in list_admin:
         user = u.user.id , u.user.first_name
         await message.answer(f"id: {user[0]}\nИмя: {user[1]}")
+
+# Обработчик келлбеков
+@router.callback_query(F.data == 'catalog')
+async def get_catalog(calldack: CallbackQuery):
+    # await calldack.answer('Вы выбрали каталог', show_alert=True) #показывает всплывающее окно
+    await calldack.answer('Вы выбрали каталог') #Пишет вв верху
+    await calldack.message.edit_text('Выберете категорию', reply_markup=kb.catalog) # Отправляет сообщение и клавиатуру
+
+@router.callback_query(F.data == 'item_nike')
+async def get_nike(callback: CallbackQuery):
+    await callback.answer(f"Вы выбрали {callback.data}")
+    await callback.message.edit_text(f"Вы выбрали {callback.data}", reply_markup=kb.back)
+
+@router.callback_query(F.data == 'item_adidas')
+async def get_nike(callback: CallbackQuery):
+    await callback.answer(f"Вы выбрали {callback.data}")
+    await callback.message.edit_text(f"Вы выбрали {callback.data}", reply_markup=kb.back)
+
+@router.callback_query(F.data == 'item_rebook')
+async def get_nike(callback: CallbackQuery):
+    await callback.answer(f"Вы выбрали {callback.data}")
+    await callback.message.edit_text(f"Вы выбрали {callback.data}", reply_markup=kb.back)
+
+# @router.callback_query(F.data == 'back')
+# async def get_back(callback: CallbackQuery):
+#     await callback.message.edit_text('Каталог', reply_markup=kb.catalog)

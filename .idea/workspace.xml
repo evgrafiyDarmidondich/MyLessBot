@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="664c6cdf-b5e9-49a1-a234-af2dd4b684a4" name="Changes" comment="перенёс хендлеры в отдельный файл handlers.py подчистил импорты">
-      <change afterPath="$PROJECT_DIR$/app/keybords.py" afterDir="false" />
+    <list default="true" id="664c6cdf-b5e9-49a1-a234-af2dd4b684a4" name="Changes" comment="реплай клавиатура">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/handlers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/keybords.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/keybords.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752827477080</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="реплай клавиатура">
+      <option name="closed" value="true" />
+      <created>1752832441730</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752832441730</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -157,6 +164,7 @@
     <MESSAGE value="хендлер эхо" />
     <MESSAGE value="хендлеры для работы с файлами и стикерами" />
     <MESSAGE value="перенёс хендлеры в отдельный файл handlers.py подчистил импорты" />
-    <option name="LAST_COMMIT_MESSAGE" value="перенёс хендлеры в отдельный файл handlers.py подчистил импорты" />
+    <MESSAGE value="реплай клавиатура" />
+    <option name="LAST_COMMIT_MESSAGE" value="реплай клавиатура" />
   </component>
 </project>
