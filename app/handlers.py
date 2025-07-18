@@ -4,6 +4,8 @@ from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 from aiogram.enums import ChatAction
 
+import app.keybords as kb
+
 router = Router()
 
 
@@ -11,8 +13,8 @@ router = Router()
 @router.message(CommandStart())
 async def cmd_start(message: Message):
     await message.bot.send_chat_action(chat_id=message.from_user.id, action=ChatAction.TYPING)
-    await asyncio.sleep(2)
-    await message.answer('Привет')
+    await asyncio.sleep(1)
+    await message.answer('Привет', reply_markup=kb.main)
 
 @router.message(Command('help'))
 async def cmd_help(message: Message):
