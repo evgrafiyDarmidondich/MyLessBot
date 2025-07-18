@@ -68,7 +68,7 @@ async def admin_list(message: Message):
 async def get_catalog(calldack: CallbackQuery):
     # await calldack.answer('Вы выбрали каталог', show_alert=True) #показывает всплывающее окно
     await calldack.answer('Вы выбрали каталог') #Пишет вв верху
-    await calldack.message.edit_text('Выберете категорию', reply_markup=kb.catalog) # Отправляет сообщение и клавиатуру
+    await calldack.message.edit_text('Выберете категорию', reply_markup=await kb.catalog_builder()) # Отправляет сообщение и клавиатуру
 
 @router.callback_query(F.data == 'item_nike')
 async def get_nike(callback: CallbackQuery):
@@ -88,3 +88,8 @@ async def get_nike(callback: CallbackQuery):
 # @router.callback_query(F.data == 'back')
 # async def get_back(callback: CallbackQuery):
 #     await callback.message.edit_text('Каталог', reply_markup=kb.catalog)
+
+@router.callback_query(F.data == 'menu')
+async def cmd_start(callback: CallbackQuery):
+    # await message.bot.send_chat_action(chat_id=message.from_user.id)
+    await callback.message.edit_text('Меню', reply_markup=kb.inline_main)

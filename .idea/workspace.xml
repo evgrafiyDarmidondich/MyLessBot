@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="664c6cdf-b5e9-49a1-a234-af2dd4b684a4" name="Changes" comment="реплай клавиатура">
+    <list default="true" id="664c6cdf-b5e9-49a1-a234-af2dd4b684a4" name="Changes" comment="калбеки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/handlers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/keybords.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/keybords.py" afterDir="false" />
@@ -153,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752832441730</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="калбеки">
+      <option name="closed" value="true" />
+      <created>1752849464079</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752849464079</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -165,6 +173,7 @@
     <MESSAGE value="хендлеры для работы с файлами и стикерами" />
     <MESSAGE value="перенёс хендлеры в отдельный файл handlers.py подчистил импорты" />
     <MESSAGE value="реплай клавиатура" />
-    <option name="LAST_COMMIT_MESSAGE" value="реплай клавиатура" />
+    <MESSAGE value="калбеки" />
+    <option name="LAST_COMMIT_MESSAGE" value="калбеки" />
   </component>
 </project>

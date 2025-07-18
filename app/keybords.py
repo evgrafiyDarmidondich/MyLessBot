@@ -1,4 +1,6 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.utils.keyboard import InlineKeyboardBuilder
+
 
 # reply клавиатура
 main = ReplyKeyboardMarkup(keyboard=[
@@ -14,29 +16,10 @@ main = ReplyKeyboardMarkup(keyboard=[
     input_field_placeholder='Выберите пункт ниже'
 )
 
-# инлайн клавиатура
-inline_main = InlineKeyboardMarkup(inline_keyboard=[
-    [
-        InlineKeyboardButton(text='Каталог', callback_data='catalog'),
-        InlineKeyboardButton(text='Корзина', callback_data='cart'),
-    ],
-    [
-        InlineKeyboardButton(text='Контакты', callback_data='contacts')
-    ]
-])
-
-catalog = InlineKeyboardMarkup(inline_keyboard=[
-    [
-        InlineKeyboardButton(text='Nike', callback_data='item_nike'),
-        InlineKeyboardButton(text='Adidas', callback_data='item_adidas'),
-    ],
-    [
-        InlineKeyboardButton(text='Rebook', callback_data='item_rebook')
-    ]
-])
-
-back = InlineKeyboardMarkup(inline_keyboard=[
-    [
-        InlineKeyboardButton(text='Назад', callback_data='catalog')
-    ]
-])
+async def catalog_builder():
+    brands = ['Nike', 'Adidas', 'Puma', 'Rebook', 'New Balans', 'Under Armour']
+    keyboard = InlineKeyboardBuilder()
+    for br in brands:
+        keyboard.add(InlineKeyboardButton(text=br, callback_data=f'item_{br}'))
+    keyboard.add(InlineKeyboardButton(text='Назад', callback_data='menu'))
+    return keyboard.adjust(2).as_markup()
