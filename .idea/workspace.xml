@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="664c6cdf-b5e9-49a1-a234-af2dd4b684a4" name="Changes" comment="хендлеры для работы с файлами и стикерами">
-      <change afterPath="$PROJECT_DIR$/handlers.py" afterDir="false" />
+    <list default="true" id="664c6cdf-b5e9-49a1-a234-af2dd4b684a4" name="Changes" comment="перенёс хендлеры в отдельный файл handlers.py подчистил импорты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752756985947</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="перенёс хендлеры в отдельный файл handlers.py подчистил импорты">
+      <option name="closed" value="true" />
+      <created>1752759560734</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752759560734</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -134,6 +141,7 @@
     <MESSAGE value="импорты и первый хендлер и запуск бота" />
     <MESSAGE value="хендлер эхо" />
     <MESSAGE value="хендлеры для работы с файлами и стикерами" />
-    <option name="LAST_COMMIT_MESSAGE" value="хендлеры для работы с файлами и стикерами" />
+    <MESSAGE value="перенёс хендлеры в отдельный файл handlers.py подчистил импорты" />
+    <option name="LAST_COMMIT_MESSAGE" value="перенёс хендлеры в отдельный файл handlers.py подчистил импорты" />
   </component>
 </project>
