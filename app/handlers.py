@@ -1,12 +1,14 @@
 import asyncio
-from os.path import defpath
+from os.path import defpath, split
 
 from aiogram import Router, F
 from aiogram.filters import Command, CommandStart
-from aiogram.types import Message, CallbackQuery
+from aiogram.types import Message, CallbackQuery, KeyboardButton
 from aiogram.enums import ChatAction
+from aiogram.utils.keyboard import ReplyKeyboardBuilder
 
 import app.keybords as kb
+import app.builder as bui
 
 router = Router()
 
@@ -17,6 +19,7 @@ async def cmd_start(message: Message):
     await message.bot.send_chat_action(chat_id=message.from_user.id, action=ChatAction.TYPING)
     await asyncio.sleep(1)
     await message.answer('Привет', reply_markup=kb.inline_main)
+
 
 @router.message(Command('help'))
 async def cmd_help(message: Message):
@@ -70,13 +73,14 @@ async def get_catalog(calldack: CallbackQuery):
     await calldack.answer('Вы выбрали каталог') #Пишет вв верху
     await calldack.message.edit_text('Выберете категорию', reply_markup=await kb.catalog_builder()) # Отправляет сообщение и клавиатуру
 
-@router.callback_query(F.data == 'item_nike')
+@router.callback_query(F.data == 'item_Nike')
 async def get_nike(callback: CallbackQuery):
     await callback.answer(f"Вы выбрали {callback.data}")
     await callback.message.edit_text(f"Вы выбрали {callback.data}", reply_markup=kb.back)
 
-@router.callback_query(F.data == 'item_adidas')
+@router.callback_query(F.data == 'item_Adidas')
 async def get_nike(callback: CallbackQuery):
+    print(callback.data)
     await callback.answer(f"Вы выбрали {callback.data}")
     await callback.message.edit_text(f"Вы выбрали {callback.data}", reply_markup=kb.back)
 
@@ -85,11 +89,7 @@ async def get_nike(callback: CallbackQuery):
     await callback.answer(f"Вы выбрали {callback.data}")
     await callback.message.edit_text(f"Вы выбрали {callback.data}", reply_markup=kb.back)
 
-# @router.callback_query(F.data == 'back')
-# async def get_back(callback: CallbackQuery):
-#     await callback.message.edit_text('Каталог', reply_markup=kb.catalog)
-
 @router.callback_query(F.data == 'menu')
 async def cmd_start(callback: CallbackQuery):
-    # await message.bot.send_chat_action(chat_id=message.from_user.id)
+    await callback.answer('Меню')
     await callback.message.edit_text('Меню', reply_markup=kb.inline_main)
